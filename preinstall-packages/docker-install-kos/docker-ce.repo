@@ -1,0 +1,13 @@
+[centos-extras]
+name=Centos extras - $basearch
+baseurl=https://mirrors.aliyun.com/centos/8.5.2111/extras/aarch64/os
+enabled=1
+gpgcheck=0
+
+[docker-ce-stable]
+name=Docker CE Stable - $basearch
+baseurl=http://mirrors.aliyun.com/docker-ce/linux/centos/8/$basearch/stable
+enabled=1
+gpgcheck=0
+gpgkey=https://mirrors.aliyun.com/docker-ce/linux/centos/gpg
+

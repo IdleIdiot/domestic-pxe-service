@@ -1,0 +1,19 @@
+version: '3.1'
+services: 
+  pxe-service:
+    image: pxe-service
+    hostname: pxe-service
+    container_name: pxe-service
+    user: root
+    build:
+      context: pxe-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./mnt:/mnt
+      - ./pxe-service/config/dhcpd.conf:/etc/dhcp/dhcpd.conf
+      - ./pxe-service/config/ks.cfg:/var/www/html/ks/ks.cfg
+      - ./pxe-service/config/grub.cfg:/var/lib/tftpboot/grub.cfg
+    privileged: true
+    network_mode: host
+    restart: always
+
